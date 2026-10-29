@@ -1,0 +1,21 @@
+backend:
+  name: github
+  repo: pietnw/dynasty-site
+  branch: main
+  base_url: https://dynasty-site.pages.dev
+  auth_endpoint: /api/auth
+
+media_folder: uploads
+public_folder: /uploads
+
+collections:
+  - name: posts
+    label: Posts
+    folder: posts
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Sport, name: sport, widget: select, options: [NFL, NBA, MLB, NHL] }
+      - { label: Date, name: date, widget: datetime }
+      - { label: Body, name: body, widget: markdown }
